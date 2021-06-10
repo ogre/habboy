@@ -1,0 +1,14 @@
+[Unit]
+Description=habboy
+Wants=network.target network-online.target
+After=network.target network-online.target
+
+[Service]
+#Type=simple
+User=mfratczak
+Group=mfratczak
+ExecStart=/home/mfratczak/share/dev/habboy_dev/habboy_sw/data_server/code/main.py
+WorkingDirectory=/home/mfratczak/share/dev/habboy_dev/habboy_sw/data_server/code/
+
+[Install]
+WantedBy=multi-user.target

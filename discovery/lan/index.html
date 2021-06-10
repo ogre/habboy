@@ -1,0 +1,92 @@
+<!-- Scan all IP addresses for HabBoy server -->
+
+<html>
+<body bgcolor='black'>
+    <H1 style='color: white'>
+        Scanning network for HABBOY
+        <div id='HABBOY_DIV'></div>
+    </H1>
+
+    <script>
+
+        function ip_increment(i_ip) {
+            var tokens = i_ip.split('.');
+            tokens[3] = parseInt(tokens[3]) + 1;
+            if (tokens[3] > 254) {
+                return "";
+                // do not increment to next network
+                /*
+                tokens[3] = 2;
+                tokens[2] = parseInt(tokens[2]) + 1;
+                if (tokens[2] > 254)
+                    return "";
+                */
+            }
+            return tokens.join('.');
+        }
+
+        var start_ip = "";
+
+        var habboy_port = "8888";
+        var probe_port = "8888";
+        // var probe_port = "8889";
+
+        var habboy_protocol = 'https://';
+        var probe_protocol = 'http://';
+        // var probe_protocol = 'https://'; // discovery won't work with https - you need to mark page as secure
+
+        function habboy_discovery(i_ip) {
+            document.getElementById("HABBOY_DIV").innerHTML = i_ip;
+
+            let probe_end_point = probe_protocol + i_ip + ':' + probe_port + '/habboy';
+            console.debug(probe_end_point);
+
+            let xhr = new XMLHttpRequest();
+            xhr.timeout = 500;
+            xhr.open('GET', probe_end_point);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.status === 200) {
+                    let _destination = habboy_protocol + i_ip + ':' + habboy_port + '/';
+                    document.getElementById("HABBOY_DIV").innerHTML = "<a href=" + _destination + '>' + _destination + "</a>";
+                    window.location.replace(_destination);
+                }
+                else {
+                    console.debug(xhr.status);
+
+                    let incr_ip = ip_increment(i_ip);
+
+                    if(incr_ip == '') {
+                        habboy_discovery(start_ip); //restart
+                    }
+                    else {
+                        habboy_discovery(incr_ip); //restart
+                    }
+                }
+            };
+            xhr.send();
+        }
+
+        function test(i_ip) { // test IP incrementation
+            let ip = i_ip;
+            while (ip != "") {
+                console.debug(ip);
+                ip = ip_increment(ip);
+            }
+        }
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            () => {
+                const urlParams = new URLSearchParams(window.location.search);
+                start_ip = urlParams.get('ip');
+                if(!start_ip)
+                    start_ip = "192.168.1.2";
+                habboy_discovery(start_ip);
+                // () => { test("192.168.252.2");
+            }
+        );
+    </script>
+</body>
+
+</html>

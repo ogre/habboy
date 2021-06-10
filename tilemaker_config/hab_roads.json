@@ -1,0 +1,39 @@
+{
+	"layers": {
+		"roads": {
+			"minzoom": 5,
+			"maxzoom": 14,
+			"simplify_below": 12,
+			"simplify_level": 0.001,
+			"simplify_ratio": 2
+		},
+		"railways": {
+			"minzoom": 13,
+			"maxzoom": 14,
+			"simplify_below": 13,
+			"simplify_level": 0.001,
+			"simplify_ratio": 2
+		}
+	},
+	"settings": {
+		"minzoom": 5,
+		"maxzoom": 14,
+		"basezoom": 14,
+		"include_ids": false,
+		"name": "HAB",
+		"version": "1.0",
+		"description": "HAB",
+		"compress": "none",
+		"metadata": {
+			"json": {
+				"vector_layers": [
+					{
+						"id": "roads",
+						"description": "roads",
+						"fields": {}
+					}
+				]
+			}
+		}
+	}
+}

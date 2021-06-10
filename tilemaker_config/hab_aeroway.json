@@ -1,0 +1,39 @@
+{
+	"layers": {
+		"aeroway": {
+			"minzoom": 9,
+			"maxzoom": 14,
+			"simplify_below": 13,
+			"simplify_length": 10,
+			"simplify_ratio": 3
+		},
+		"aeroway_other": {
+			"minzoom": 9,
+			"maxzoom": 14,
+			"simplify_below": 13,
+			"simplify_length": 10,
+			"simplify_ratio": 3
+		}
+	},
+	"settings": {
+		"minzoom": 8,
+		"maxzoom": 14,
+		"basezoom": 14,
+		"include_ids": false,
+		"name": "HAB",
+		"version": "1.0",
+		"description": "HAB",
+		"compress": "none",
+		"metadata": {
+			"json": {
+				"vector_layers": [
+					{
+						"id": "aeroway",
+						"description": "aeroway",
+						"fields": {}
+					}
+				]
+			}
+		}
+	}
+}

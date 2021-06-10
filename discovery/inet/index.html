@@ -1,0 +1,29 @@
+
+<!-- rename this file to index.html and put on some website -->
+
+<!-- index.html will scan local network IPs to find discovery/lan/HabBoyAdvertise.py -->
+
+<html>
+	<body>
+		<script>
+			function get_server_ip(i_srv_name) {
+				var xhr = new XMLHttpRequest();
+				xhr.open('GET', 'http://www.cgarea.com/ip/get.php?HOST=' + i_srv_name);
+				xhr.onload = function() {
+					if (xhr.status === 200) {
+						var local_ip = xhr.responseText.split("|")[2];
+						window.location.replace('https://' + local_ip + ':8888');
+					}
+					else
+						console.debug(xhr.responseTex);
+				};
+				xhr.send();
+			}
+
+			document.addEventListener(
+				"DOMContentLoaded",
+				() => { get_server_ip("habboy"); }
+			);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+
+
+<script src="js/ws_client.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<head>
+<style>
+	body, html {
+		height: 100%;
+		width: 100%;
+	}
+	div {
+		font-family: Tahoma, Verdana, Segoe, sans-serif;
+	}
+</style>
+</head>
+
+<body>
+	<div id="ws_client_info"></div>
+	<div id="ws_client_debug"></div>
+</body>
+
+
+<script language="javascript" type="text/javascript">
+
+function habboy_hw_iface_ws_test_client_init()
+{
+	OpenConnection("127.0.0.1:5565");
+}
+
+window.addEventListener("load", habboy_hw_iface_ws_test_client_init, false);
+
+</script>
+

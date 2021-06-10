@@ -1,0 +1,10 @@
+[Unit]
+Description=HabBoy
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+ExecStart=/home/mfratczak/share/dev/habboy_dev/habboy_sw/data_server/code/main.py    --https    --host ip    --dbfile /home/mfratczak/share/dev/habboy_dev/habboy_sw/data_server/code/habboy_data.db    --payload_id e11
+
+[Install]
+WantedBy=multi-user.target

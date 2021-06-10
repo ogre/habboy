@@ -1,0 +1,20 @@
+
+:root {
+	--HB_bg: 	hsl(210, 15%, 14%);
+	--HB_text: 	#eee;
+	--HB_text_highlight: 	hsl(32, 93%, 45%);
+
+	--HB_tab_button:rgb(31, 62, 93);
+	--HB_tab_button_active:#bb0;
+	--HB_tab_button_text:#eee;
+	--HB_tab_button_active_text:#000;
+	--HB_tab_button_border:rgb(31, 62, 93);
+	--HB_tab_button_border_highlight:#b80;
+
+	--HB_button:rgb(31, 62, 93);
+	--HB_button_active:#990;
+	--HB_button_text:#ccc;
+	--HB_button_active_text:#000;
+	--HB_button_border:#000;
+}
+

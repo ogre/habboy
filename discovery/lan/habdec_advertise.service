@@ -1,0 +1,14 @@
+[Unit]
+Description=habdec_advertise
+Wants=network.target network-online.target
+After=network.target network-online.target
+
+[Service]
+#Type=simple
+User=mfratczak
+Group=mfratczak
+ExecStart=/home/mfratczak/share/dev/habboy_dev/habboy_sw/discovery/lan/HabDecAdvertise.py --start_ip 192.168.1.240 --timeout_ms 500 --verbose
+
+
+[Install]
+WantedBy=multi-user.target

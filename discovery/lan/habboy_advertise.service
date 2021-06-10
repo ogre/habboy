@@ -1,0 +1,14 @@
+[Unit]
+Description=habboy_advertise
+Wants=network.target network-online.target
+After=network.target network-online.target
+
+[Service]
+#Type=simple
+User=mfratczak
+Group=mfratczak
+ExecStart=/home/mfratczak/share/dev/habboy_dev/habboy_sw/discovery/lan/HabBoyAdvertise.py
+WorkingDirectory=/home/mfratczak/share/dev/habboy_dev/habboy_sw/discovery/lan
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,36 @@
+[
+    {
+        "name": "sentence_id",
+        "sensor": "base.ascii_int"
+    },
+    {
+        "name": "time",
+        "sensor": "stdtelem.time"
+    },
+    {
+        "format": "dd.dddd",
+        "name": "latitude",
+        "sensor": "stdtelem.coordinate"
+    },
+    {
+        "format": "dd.dddd",
+        "name": "longitude",
+        "sensor": "stdtelem.coordinate"
+    },
+    {
+        "name": "altitude",
+        "sensor": "base.ascii_int"
+    },
+    {
+        "name": "satellites",
+        "sensor": "base.ascii_int"
+    },
+    {
+        "name": "fix_age",
+        "sensor": "base.ascii_int"
+    },
+    {
+        "name": "temp",
+        "sensor": "base.ascii_int"
+    }
+]

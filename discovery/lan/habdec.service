@@ -1,0 +1,15 @@
+[Unit]
+Description=habdec
+Wants=network.target network-online.target
+After=network.target network-online.target
+
+[Service]
+#Type=simple
+User=mfratczak
+Group=mfratczak
+ExecStart=/home/mfratczak/share/dev/habdec/build/install/habdecWebsocketServer --config service.config --print 0 --no_exit 1
+WorkingDirectory=/home/mfratczak/share/dev/habdec/build/install/
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
