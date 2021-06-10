@@ -116,7 +116,7 @@ reboot computer
 stop computer
 
 ## Directory Structure
-Below is a dir structure of ```/var/www/html```
+Below is an example dir structure of ```/var/www/html```
 
 ```
 ~  www tree -d -l -L 4 .
@@ -135,7 +135,7 @@ Below is a dir structure of ```/var/www/html```
     │   │   ├── Klokantech Noto Sans Bold
     │   │   ├── ...
     │   │   └── Roboto Thin-Italic
-    │   └── tiles -> /home/pi/share/data/osm/poland_layered/3
+    │   └── tiles -> /home/pi/share/data/osm/tiles
     │       ├── admin
     │       ├── aeroway
     │       ├── buildings
